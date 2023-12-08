@@ -13,7 +13,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
     async function fetchData() {
       try {
         const request = await axios.get(fetchUrl);
-       
+
         setMovies(request.data.results);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -21,7 +21,7 @@ function Row({ title, fetchUrl, isLargeRow }) {
     }
     fetchData();
   }, [fetchUrl]);
- 
+
   const opts = {
     height: "390",
     width: "100%",
@@ -47,20 +47,21 @@ function Row({ title, fetchUrl, isLargeRow }) {
     <div className="row">
       <h1>{title}</h1>
       <div className="row__posters">
-        {movies.map((movie) => (
+        {movies.map((movie, index) => (
           <img
+            key={index}
             onClick={() => handleClick(movie)}
             className={`row__poster ${isLargeRow && "row__posterLarge"}`}
-                src={`${base_url}${
-                  isLargeRow ? movie.poster_path : movie.backdrop_path
-                }`}
-                alt={movie.name}
+            src={`${base_url}${
+              isLargeRow ? movie.poster_path : movie.backdrop_path
+            }`}
+            alt={movie.name}
           />
         ))}
       </div>
       <div style={{ padding: "40px" }}>
-            {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
-          </div>
+        {trailerUrl && <YouTube videoId={trailerUrl} opts={opts} />}
+      </div>
     </div>
   );
 }
