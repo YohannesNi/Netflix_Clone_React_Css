@@ -4,7 +4,6 @@ import Nav from "./components/Nav/Nav";
 import Row from "./components/Row/Row";
 import requests from "./requests";
 
-
 function App() {
   return (
     <div className="App">
@@ -15,7 +14,7 @@ function App() {
         fetchUrl={requests.fetchNetflixOrginals}
         isLargeRow
       />
-      <Row title="Trending Now" fetchUrl={requests.fetchTrending } />
+      <Row title="Trending Now" fetchUrl={requests.fetchTrending} />
       <Row title="Top Rated" fetchUrl={requests.fetchTopRatedMovies} />
       <Row title="Action Movies" fetchUrl={requests.fetchActionMovies} />
       <Row title="Comedy Movies" fetchUrl={requests.fetchComedyMovies} />
