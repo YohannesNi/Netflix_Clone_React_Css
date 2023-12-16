@@ -18,15 +18,15 @@ function Banner() {
     }
     fetchData();
   }, []);
-  console.log(movie)
+  console.log(movie);
 
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
 
-
   return (
-    <header className="banner"
+    <header
+      className="banner"
       style={{
         backgroundSize: "cover",
         backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie?.backdrop_path}")`,
@@ -42,7 +42,7 @@ function Banner() {
           <button className="banner__button">My List</button>
         </div>
         <h1 className="banner__description">
-        {truncate(movie?.overview, 150)}
+          {truncate(movie?.overview, 150)}
         </h1>
       </div>
       <div className="banner__fadeBottom" />
@@ -51,3 +51,4 @@ function Banner() {
 }
 
 export default Banner;
+//
