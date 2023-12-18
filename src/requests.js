@@ -13,3 +13,4 @@ const requests = {
   fetchCrime: `/discover/movie?api_key=${API_KEY}&with_genres=80`,
 };
 export default requests;
+//
