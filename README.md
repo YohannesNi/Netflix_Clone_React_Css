@@ -1,6 +1,6 @@
-# Netflix Clone
+# Netflix Clone/ CSS
 
-This is a Netflix clone built using React, Firebase Authentication, and Tailwind CSS.
+This is a Netflix clone built using React, Firebase Authentication, and CSS.
 - Frontend: React,CSS
 
 ## Features
